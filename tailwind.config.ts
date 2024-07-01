@@ -21,9 +21,9 @@ const config: Config = {
         }
       },
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "hero": "url(/images/website/home/hero.png)",
+        "gradient-black": 'linear-gradient(0deg, #00000000 30.02%, #00224b00 189.95%)',
+        "gradient-black-esp": 'linear-gradient(0deg, #00000000 30.02%, #00224b00 189.95%)'
       },
     },
   },

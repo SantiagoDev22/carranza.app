@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="es_MX">
       <body>
-          <header className="sticky top-0 left-0 right-0 z-40 w-full">
+          <header className="sticky top-0 left-0 right-0 z-40 w-full shadow-md">
                 <div className="bg-white shadow-md text-oc-green-1 md:gap-x-0 gap-x-5 transition ease-in delay-200 grid grid-cols-3 items-center justify-center px-5 lg:px-10 py-3">
                     <ul className="flex md:flex-row flex-col md:items-center gap-y-3 gap-x-4 lg:gap-x-10 justify-start">
                         <li className='lg:block hidden'>
