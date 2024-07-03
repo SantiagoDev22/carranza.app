@@ -86,7 +86,7 @@ export default function RootLayout({
                 </nav>
           </header>
           <main className={inter.className}>{children}</main>
-          <footer className='bg-white pt-10 pb-7 lg:px-10 px-5 relative z-20'>
+          <footer className='bg-white pt-10 sm:pt-16 pb-7 lg:px-10 px-5 relative z-20'>
               <div className='flex sm:flex-row flex-col gap-y-7 justify-center sm:justify-between sm:items-stretch items-center'>
                 <ul className='flex flex-col sm:text-left text-center gap-y-4 text-oc-green-1 md:text-base text-sm'>
                   <li>
