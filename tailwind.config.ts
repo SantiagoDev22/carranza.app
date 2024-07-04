@@ -34,6 +34,9 @@ const config: Config = {
           },
           brown: {
             1: '#C67437'
+          },
+          white: {
+            1: '#F3F3F3'
           }
         }
       },

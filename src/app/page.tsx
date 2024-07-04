@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Banner from "../app/banner";
 
 export default function Home() {
   return (
@@ -19,7 +20,7 @@ export default function Home() {
         </hgroup>
       </section>
 
-      {/* Section clients buy */}
+      {/* Section banner */}
       <section className="pt-16 relative z-20">
         <div className="container">
           <hgroup className="pb-16">
@@ -27,14 +28,7 @@ export default function Home() {
               Lo buscan nuestros clientes
             </h2>
           </hgroup>
-          <figure>
-            <Image
-                src="/images/website/home/banner.png"
-                alt="Precio de Détox capilar"
-                width={2000}
-                height={2000}
-            />          
-          </figure>
+          < Banner />
         </div>
       </section>
 
