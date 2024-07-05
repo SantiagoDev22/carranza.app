@@ -283,8 +283,133 @@ export default function about() {
                 </div>
             </section>
 
+            {/* Section warranty */}
+            <section className="pt-20 lg:pt-40">
+                <div className="container">
+                    <div className="flex flex-col gap-y-4 relative">
+                        <hgroup className="xl:max-w-[72rem] flex justify-center xl:justify-end relative z-20">
+                            <h3 className="text-center text-4xl md:text-5xl font-bold !leading-[normal] uppercase text-oc-green-1">
+                                Garantía de <br className="lg:block hidden"/>
+                                productos contra la <br className="lg:block hidden"/> 
+                                caída de cabello
+                            </h3>
+                        </hgroup>
+                        <div className="py-[0.1rem] bg-oc-brown-1 relative"></div>
+                        <div className="xl:max-w-[54rem] 2xl:max-w-[65rem] flex justify-center xl:justify-end relative z-20">
+                            <p className="text-center text-2xl uppercase font-bold text-oc-green-1">
+                                Conoce cómo obtener la <br className="lg:block hidden"/>
+                                garantía de tu Détox Capilar
+                            </p>
+                        </div>
+                        <figure className="xl:absolute left-0 top-0 bottom-0 flex xl:justify-normal justify-center items-center z-20">
+                            <Image
+                                src="/images/website/nosotros/productos.png"
+                                alt="Productos"
+                                width={350}
+                                height={350}
+                            />
+                        </figure>
+                    </div>
+                </div>
+            </section>
+
+            {/* Section steps */}
+            <section className="py-10 lg:py-20">
+                <div className="container">
+                    <div>
+                        <div className="lg:pb-0 pb-14 flex flex-col-reverse gap-y-10 lg:grid grid-cols-2 items-center">
+                            <figure className="flex justify-center relative border-r border-b-[3px] border-oc-green-1">
+                                <Image
+                                    src="/images/website/nosotros/chica.png"
+                                    alt="Pasos 1"
+                                    width={350}
+                                    height={350}
+                                />
+                                <div className="p-1 rounded-full absolute left-0 -bottom-[4.5px] bg-oc-green-1"></div>
+                            </figure>
+                            <div className="flex flex-col gap-y-3 lg:pl-14">
+                                <p className="bg-oc-brown-1 text-white w-full xl:w-[30%] text-center py-1 px-2 text-3xl font-semibold uppercase">
+                                    paso 1
+                                </p>
+                                <p className="text-justify text-lg text-oc-green-1">
+                                    Tómate una foto inicial y envíala cada lunes por los PRÓXIMOS 3 MESES, mostrandodel área a tratar.
+                                    (Debe tener la fecha en la que se tomó la foto).
+                                </p>
+                            </div>
+                        </div>
+                        <div className="lg:pb-0 pb-14 gap-y-10 grid xl:grid-cols-2 items-center">
+                            <div className="flex flex-col gap-y-3 lg:pr-14">
+                                <p className="bg-oc-brown-1 text-white w-full xl:w-[30%] text-center py-1 px-2 text-3xl font-semibold uppercase">
+                                    paso 1
+                                </p>
+                                <p className="text-justify text-lg text-oc-green-1">
+                                    Tómate una foto inicial y envíala cada lunes por los PRÓXIMOS 3 MESES, mostrandodel área a tratar.
+                                    (Debe tener la fecha en la que se tomó la foto).
+                                </p>
+                            </div>
+                            <figure className="flex justify-center relative border-l border-b-[3px] border-oc-green-1">
+                                <Image
+                                    src="/images/website/nosotros/pareja.png"
+                                    alt="Pasos 2"
+                                    width={350}
+                                    height={350}
+                                />
+                                <div className="p-1 rounded-full absolute right-0 -bottom-[4.5px] bg-oc-green-1"></div>
+                            </figure>
+                        </div>
+                        <div className="lg:pb-0 pb-14 flex flex-col-reverse gap-y-10 lg:grid grid-cols-2 items-center">
+                            <figure className="flex justify-center relative border-r border-b-[3px] border-oc-green-1">
+                                <Image
+                                    src="/images/website/nosotros/chica-feliz.png"
+                                    alt="Pasos 4"
+                                    width={350}
+                                    height={350}
+                                />
+                                <div className="p-1 rounded-full absolute left-0 -bottom-[4.5px] bg-oc-green-1"></div>
+                            </figure>
+                            <div className="flex flex-col gap-y-3 lg:pl-14">
+                                <p className="bg-oc-brown-1 text-white w-full xl:w-[30%] text-center py-1 px-2 text-3xl font-semibold uppercase">
+                                    paso 4
+                                </p>
+                                <p className="text-justify text-lg text-oc-green-1">
+                                    En cada foto enviada por WhatsApp
+                                    debes añadir un comentario
+                                    con tu percepción del avance.
+                                </p>
+                            </div>
+                        </div>
+                        <div className="gap-y-10 grid xl:grid-cols-2 items-center">
+                            <div className="flex flex-col gap-y-3 lg:pr-14">
+                                <p className="bg-oc-brown-1 text-white w-full xl:w-[30%] text-center py-1 px-2 text-3xl font-semibold uppercase">
+                                    paso 4
+                                </p>
+                                <p className="text-justify text-lg text-oc-green-1">
+                                    Si FALTA UNA FOTOGRAFÍA
+                                    o es borrosa se anulará
+                                    inmediatamente la garantía.
+                                </p>
+                            </div>
+                            <figure className="flex justify-center relative border-l border-b-[3px] border-oc-green-1">
+                                <Image
+                                    src="/images/website/nosotros/chico.png"
+                                    alt="Pasos 4"
+                                    width={350}
+                                    height={350}
+                                />
+                                <div className="p-1 rounded-full absolute right-0 -bottom-[4.5px] bg-oc-green-1"></div>
+                            </figure>
+                        </div>
+                        <div className="grid grid-cols-2">
+                            <figure className="h-28 border-r border-oc-green-1 relative">
+                                <div className="p-1 rounded-full absolute -right-1 -bottom-[4.5px] bg-oc-green-1"></div>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Section banner */}
-            <section className="pt-16 relative z-20">
+            <section className="pt-5 lg:pt-16 pb-20 relative z-20">
                 <div className="container">
                 < Banner />
                 </div>
