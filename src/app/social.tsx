@@ -5,7 +5,7 @@ export default function Social() {
     return (
         <ul className="flex items-center gap-x-3 md:gap-x-6">
             <li>
-                <a href="#" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.facebook.com/originalcarranza" target="_blank" rel="noopener noreferrer">
                     <Image
                         src="/images/website/components/facebook.png"
                         alt="Logo Facebook"
