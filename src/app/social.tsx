@@ -16,7 +16,7 @@ export default function Social() {
                 </a>
             </li>
             <li>
-                <a href="#" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.instagram.com/ocarranzaoficial/" target="_blank" rel="noopener noreferrer">
                     <Image
                         src="/images/website/components/instagram.png"
                         alt="Logo Instagram"
