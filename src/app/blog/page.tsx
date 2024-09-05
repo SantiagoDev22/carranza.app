@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Nosotros",
-  description: "Nosotros",
+  title: "Blog Sobre Salud Capilar y la Importancia de los Productos Naturales en tu Rutina l Original Carranza",
+  description: "Obtén información valiosa para mejorar tu salud integrando productos 100% naturales en tu día a día.",
 };
 
 export default function blog() {   

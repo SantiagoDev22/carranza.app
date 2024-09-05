@@ -3,8 +3,8 @@ import Image from "next/image";
 import Banner from "../banner";
 
 export const metadata: Metadata = {
-  title: "Nosotros",
-  description: "Nosotros",
+  title: "El Mejor y Más Efectivo Tratamiento Capilar de México l Original Carranza",
+  description: "Ideal para hombres y mujeres, favorece el crecimiento del cabello, retrasa y frena su caída de manera natural.",
 };
 
 export default function about() {   

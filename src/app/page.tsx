@@ -1,5 +1,11 @@
 import Image from "next/image";
 import Banner from "../app/banner";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Productos y Tratamientos 100% Naturales l Original Carranza",
+  description: "Somos una empresa mexicana dedicada a la elaboración y distribución de tratamientos capilares 100% artesanales a base de herbolaria orgánica.",
+};
 
 export default function Home() {
   return (

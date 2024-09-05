@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Nosotros",
-  description: "Nosotros",
+  title: "",
+  description: "",
 };
 
 

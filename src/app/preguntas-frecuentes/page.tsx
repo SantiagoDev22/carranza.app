@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Nosotros",
-  description: "Nosotros",
+  title: "Preguntas Frecuentes l Original Carranza",
+  description: "Aquí obtendrás todas las respuestas que necesitas para conocer acerca de nuestros productos para el cuidado del cabello, salud y belleza.",
 };
 
 export default function faqs() {   
