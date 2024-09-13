@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Banner from "../banner";
 
 export const metadata: Metadata = {
   title: "Los Más Vendidos l Original Carranza",
@@ -22,8 +21,8 @@ export default function market() {
                         </h2>
                     </hgroup>
                     <div className="pt-20 grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-x-5 gap-y-8">
-                        <a href="#" className="shadow-2xl px-2 py-4 bg-white flex flex-col gap-y-2">
-                            <a href="#" className="hover:brightness-90 transition flex justify-center">
+                        <div className="shadow-2xl px-2 py-4 bg-white flex flex-col gap-y-2">
+                            <a href="/lo-mas-vendido/producto" className="hover:brightness-90 transition flex justify-center">
                                 <Image
                                     src="/images/website/tienda/shampoo.png"
                                     alt="Producto"
@@ -61,9 +60,9 @@ export default function market() {
                                     Agregar
                                 </a>
                             </div>
-                        </a>
-                        <a href="#" className="shadow-2xl px-2 py-4 bg-white flex flex-col gap-y-2">
-                            <a href="#" className="hover:brightness-90 transition flex justify-center">
+                        </div>
+                        <div className="shadow-2xl px-2 py-4 bg-white flex flex-col gap-y-2">
+                            <a href="/lo-mas-vendido/producto" className="hover:brightness-90 transition flex justify-center">
                                 <Image
                                     src="/images/website/tienda/tonico.png"
                                     alt="Producto"
@@ -101,9 +100,9 @@ export default function market() {
                                     Agregar
                                 </a>
                             </div>
-                        </a>
-                        <a href="#" className="shadow-2xl px-2 py-4 bg-white flex flex-col gap-y-2">
-                            <a href="#" className="hover:brightness-90 transition flex justify-center">
+                        </div>
+                        <div className="shadow-2xl px-2 py-4 bg-white flex flex-col gap-y-2">
+                            <a href="/lo-mas-vendido/producto" className="hover:brightness-90 transition flex justify-center">
                                 <Image
                                     src="/images/website/tienda/saw.png"
                                     alt="Producto"
@@ -141,9 +140,9 @@ export default function market() {
                                     Agregar
                                 </a>
                             </div>
-                        </a>
-                        <a href="#" className="shadow-2xl px-2 py-4 bg-white flex flex-col gap-y-2">
-                            <a href="#" className="hover:brightness-90 transition flex justify-center">
+                        </div>
+                        <div className="shadow-2xl px-2 py-4 bg-white flex flex-col gap-y-2">
+                            <a href="/lo-mas-vendido/producto" className="hover:brightness-90 transition flex justify-center">
                                 <Image
                                     src="/images/website/tienda/desodorante.png"
                                     alt="Producto"
@@ -181,9 +180,9 @@ export default function market() {
                                     Agregar
                                 </a>
                             </div>
-                        </a>
-                        <a href="#" className="shadow-2xl px-2 py-4 bg-white flex flex-col gap-y-2">
-                            <a href="#" className="hover:brightness-90 transition flex justify-center">
+                        </div>
+                        <div className="shadow-2xl px-2 py-4 bg-white flex flex-col gap-y-2">
+                            <a href="/lo-mas-vendido/producto" className="hover:brightness-90 transition flex justify-center">
                                 <Image
                                     src="/images/website/tienda/pasta.png"
                                     alt="Producto"
@@ -221,9 +220,9 @@ export default function market() {
                                     Agregar
                                 </a>
                             </div>
-                        </a>
-                        <a href="#" className="shadow-2xl px-2 py-4 bg-white flex flex-col gap-y-2">
-                            <a href="#" className="hover:brightness-90 transition flex justify-center">
+                        </div>
+                        <div className="shadow-2xl px-2 py-4 bg-white flex flex-col gap-y-2">
+                            <a href="/lo-mas-vendido/producto" className="hover:brightness-90 transition flex justify-center">
                                 <Image
                                     src="/images/website/tienda/acido.png"
                                     alt="Producto"
@@ -261,9 +260,9 @@ export default function market() {
                                     Agregar
                                 </a>
                             </div>
-                        </a>
-                        <a href="#" className="shadow-2xl px-2 py-4 bg-white flex flex-col gap-y-2">
-                            <a href="#" className="hover:brightness-90 transition flex justify-center">
+                        </div>
+                        <div className="shadow-2xl px-2 py-4 bg-white flex flex-col gap-y-2">
+                            <a href="/lo-mas-vendido/producto" className="hover:brightness-90 transition flex justify-center">
                                 <Image
                                     src="/images/website/tienda/colageno.png"
                                     alt="Producto"
@@ -301,9 +300,9 @@ export default function market() {
                                     Agregar
                                 </a>
                             </div>
-                        </a>
-                        <a href="#" className="shadow-2xl px-2 py-4 bg-white flex flex-col gap-y-2">
-                            <a href="#" className="hover:brightness-90 transition flex justify-center">
+                        </div>
+                        <div className="shadow-2xl px-2 py-4 bg-white flex flex-col gap-y-2">
+                            <a href="/lo-mas-vendido/producto" className="hover:brightness-90 transition flex justify-center">
                                 <Image
                                     src="/images/website/tienda/keratina.png"
                                     alt="Producto"
@@ -341,7 +340,7 @@ export default function market() {
                                     Agregar
                                 </a>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
             </div>
