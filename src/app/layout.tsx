@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "../style/globals.css";
 import Social from "../app/social";
 import Newsletter from "../app/newsletter";
+import Cart from "../app/cart";
 
 const inter = Montserrat({ subsets: ["latin"] });
 
@@ -58,8 +59,9 @@ export default function RootLayout({
                             height={124}
                         />
                     </a>
-                    <div className='flex justify-end'>
+                    <div className='flex gap-x-3 md:gap-x-6 justify-end'>
                       <Social />
+                      <Cart />
                     </div>
                 </div>
                 <nav className='bg-white pt-1 pb-6 lg:block hidden'>
