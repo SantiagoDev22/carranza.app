@@ -82,7 +82,7 @@ export default function about() {
                         <div className="relative flex justify-around">
                             <div className="bg-oc-white-1 grid place-content-center py-4 lg:px-0 px-8 w-full xl:w-[50rem] rounded-tl-md rounded-bl-md rounded-tr-md rounded-br-md lg:rounded-tl-none lg:rounded-bl-none lg:rounded-tr-full lg:rounded-br-full">
                                 <p className="text-justify lg:max-w-[33rem] italic">
-                                    Tengo un salón de belleza y siempre me han mostrado productos que no garantizan resultados en todos los casos , ya que la caída de cabello es producida por diferentes problemas , Original Carranza es el único q me mostró una solución completa.
+                                    Tengo un salón de belleza y siempre me han mostrado productos que no garantizan resultados en todos los casos , ya que la caída de cabello es producida por diferentes problemas , Original Carranza es el único que me mostró una solución completa.
                                     <br /><br />
                                     He probado el producto menos de un mes y los resultados son muy visibles, lo recomiendo al 100!!!
                                 </p>
