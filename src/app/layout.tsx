@@ -132,6 +132,18 @@ export default function RootLayout({
                 </div>
               </div>
           </footer>
+          <div className="fixed mb-10 sm:mb-0 sm:mt-52 mr-2 sm:mr-[50px] bottom-0 sm:top-0 right-0 z-40">
+              <figure className="animate-pulse">
+                  <a href="#" target="_blank" rel="nofollow">
+                    <Image
+                        src="/images/website/components/ws.png"
+                        alt="Logo WhatsApp"
+                        width={100}
+                        height={100}
+                    />
+                  </a>
+              </figure>
+          </div>
       </body>
     </html>
   );

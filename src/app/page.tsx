@@ -60,7 +60,7 @@ export default function Home() {
                     Con ingredientes 100% naturales. Nuestro Shampoo se aplica en el cuero cabelludo dando un suave masaje con la yema de los dedos y posteriormente se deja reposar un par de minutos. Nutre el folículo con proteínas para darle fuerza y recuperar tu cabello.
                   </p>
                   <div className="flex justify-center xl:justify-start">
-                    <a href="#" className="text-black text-lg hover:text-white hover:bg-oc-brown-1 transition bg-white border border-oc-brown-1 py-2 px-4">
+                    <a href="/lo-mas-vendido" className="text-black text-lg hover:text-white hover:bg-oc-brown-1 transition bg-white border border-oc-brown-1 py-2 px-4">
                       Comprar
                     </a>
                   </div>
@@ -75,7 +75,7 @@ export default function Home() {
                     Usarlo es perfecto si quieres que tu cabello crezca. Promueve una gran aceleración en el crecimiento del cabello, donde nuestro Tónico Capilar ha sido puesto a prueba y ha logrado comprobar su gran funcionalidad. Este producto está diseñado especialmente para acelerar el crecimiento del cabello en zonas despobladas, y para que crezca más rápido.
                   </p>
                   <div className="flex justify-center xl:justify-start">
-                    <a href="#" className="text-black text-lg hover:text-white hover:bg-oc-brown-1 transition bg-white border border-oc-brown-1 py-2 px-4">
+                    <a href="/lo-mas-vendido" className="text-black text-lg hover:text-white hover:bg-oc-brown-1 transition bg-white border border-oc-brown-1 py-2 px-4">
                       Comprar
                     </a>
                   </div>
@@ -106,7 +106,7 @@ export default function Home() {
                     Este suplemento es perfecto para mejorar tu salud capilar, ya que logra aumentar su crecimiento y volumen, siendo muy útil para las personas que sufren de calvicie. Está hecho para equilibrar las hormonas que ayudan a disminuir la caída del cabello.
                   </p>
                   <div className="flex justify-center xl:justify-start">
-                    <a href="#" className="text-black text-lg hover:text-white hover:bg-oc-brown-1 transition bg-white border border-oc-brown-1 py-2 px-4">
+                    <a href="/lo-mas-vendido" className="text-black text-lg hover:text-white hover:bg-oc-brown-1 transition bg-white border border-oc-brown-1 py-2 px-4">
                       Comprar
                     </a>
                   </div>
@@ -134,7 +134,7 @@ export default function Home() {
                   Ideal para Hombres
                 </h4>
                 <div className="flex justify-center">
-                  <a href="#" className="text-black text-lg hover:text-white hover:bg-oc-brown-1 transition bg-white border border-oc-brown-1 py-2 px-4">
+                  <a href="/lo-mas-vendido" className="text-black text-lg hover:text-white hover:bg-oc-brown-1 transition bg-white border border-oc-brown-1 py-2 px-4">
                     Comprar ahora
                   </a>
                 </div>
@@ -154,7 +154,7 @@ export default function Home() {
                   Perfecto para Mujeres
                 </h4>
                 <div className="flex justify-center">
-                  <a href="#" className="text-black text-lg hover:text-white hover:bg-oc-brown-1 transition bg-white border border-oc-brown-1 py-2 px-4">
+                  <a href="/lo-mas-vendido" className="text-black text-lg hover:text-white hover:bg-oc-brown-1 transition bg-white border border-oc-brown-1 py-2 px-4">
                     Comprar ahora
                   </a>
                 </div>

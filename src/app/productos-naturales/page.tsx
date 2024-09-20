@@ -38,7 +38,7 @@ export default function work() {
                             TU TRATAMIENTO CAPILAR INCLUYE UNA GARANTÍA <span className="text-oc-brown-1">DEL 100%</span>
                         </h2>
                         <div className="flex justify-center">
-                            <a href="#" className="text-white text-lg hover:text-white hover:bg-oc-brown-1 transition bg-transparent border border-oc-brown-1 py-2 px-4">
+                            <a href="/preguntas-frecuentes" className="text-white text-lg hover:text-white hover:bg-oc-brown-1 transition bg-transparent border border-oc-brown-1 py-2 px-4">
                                 Conoce tu garantía
                             </a>
                         </div>
@@ -146,7 +146,7 @@ export default function work() {
                         <p className="text-justify text-oc-green-1">
                             Sabemos lo mucho que significa para ti encontrar un Tratamiento Capilar que funcione y te ayude a encontrar resultados. Por eso, nuestro equipo se ha encargado de crear un producto que sirva, sea sencillo de aplicar y que te haga sentir bien cuándo lo usas. Conoce algunos casos de éxito de personas que ya han usado y comprobado porque somos la Marca Número 1 en Tratamiento Capilar para la Caída de Cabello y ratar la Alopecia. 
                         </p>
-                        <a href="#" className="text-center text-oc-green-1 text-xl">
+                        <a href="/preguntas-frecuentes" className="text-center text-oc-green-1 text-xl">
                             Conoce Nuestra Garantía
                         </a>
                     </div>
@@ -158,11 +158,11 @@ export default function work() {
                     <div className="flex flex-col gap-y-12">
                         <div className="flex lg:flex-row flex-col lg:h-[40rem] gap-y-5">
                             <div className="flex flex-col lg:gap-y-0 gap-y-5">
-                                <iframe className="h-80 lg:h-full w-full xl:w-[30rem]" src="https://www.youtube.com/embed/DckGF30nF3Q?si=m4BvInSAB6m9cVrZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                <iframe className="h-80 lg:h-full w-full xl:w-[30rem]" src="https://www.youtube.com/embed/C-5BggkL19w?si=NAYnoLqrky-ycWYz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                <iframe className="h-80 lg:h-full w-full xl:w-[30rem]" src="https://www.youtube.com/embed/DckGF30nF3Q?si=m4BvInSAB6m9cVrZ" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+                                <iframe className="h-80 lg:h-full w-full xl:w-[30rem]" src="https://www.youtube.com/embed/C-5BggkL19w?si=NAYnoLqrky-ycWYz" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
                             </div>
                             <div>
-                                <iframe className="w-full lg:w-[25rem] xl:w-[30rem] 2xl:w-[41rem] h-80 lg:h-full" src="https://www.youtube.com/embed/W_ZZ9dZE8T8?si=FJXfgLWZNBs9as0o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                <iframe className="w-full lg:w-[25rem] xl:w-[30rem] 2xl:w-[41rem] h-80 lg:h-full" src="https://www.youtube.com/embed/W_ZZ9dZE8T8?si=FJXfgLWZNBs9as0o" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
                             </div>
                         </div>
                         <figure className="flex justify-center">
@@ -188,7 +188,7 @@ export default function work() {
                             Cada uno de nuestros productos integra ingredientes 100% naturales para asegurar resultados. Y sabemos que cada persona es diferente, porque te aseguramos resultados o te regresamos tu dinero.
                         </p>
                         <div className="flex justify-center">
-                            <a href="#" className="text-black text-lg hover:text-white hover:bg-oc-brown-1 transition bg-white border border-oc-brown-1 py-2 px-4">
+                            <a href="/lo-mas-vendido" className="text-black text-lg hover:text-white hover:bg-oc-brown-1 transition bg-white border border-oc-brown-1 py-2 px-4">
                             Comprar
                             </a>
                         </div>

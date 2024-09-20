@@ -38,7 +38,7 @@ export default function faqs() {
                             />
                         </figure>
                         <div>
-                            <a href="#" className="text-black text-2xl hover:text-white hover:bg-oc-brown-1 transition bg-white border border-oc-brown-1 py-2 px-8">
+                            <a href="/lo-mas-vendido" className="text-black text-2xl hover:text-white hover:bg-oc-brown-1 transition bg-white border border-oc-brown-1 py-2 px-8">
                                 Compra
                             </a>
                         </div>
