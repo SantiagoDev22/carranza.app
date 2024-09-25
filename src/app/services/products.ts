@@ -1,4 +1,7 @@
+// "use client";
+
 import axios from "axios";
+import { Productos } from "./types/Productos";
 
 const api_url = 'http://127.0.0.1:8000/api' //process.env.API_URL;
 const api_token = '3tuK0UCMWImeSoYNpD9c6dWyF5RGUDoI' // process.env.API_TOKEN;
@@ -6,7 +9,7 @@ const api_token = '3tuK0UCMWImeSoYNpD9c6dWyF5RGUDoI' // process.env.API_TOKEN;
 // function to get all products
 export const getProducts = async (): Promise<{ data: Productos[] }> => {
   try {
-    const response = await axios.get(`${api_url}/products?domain=develogy.mx&page=1`, {
+    const response = await axios.get(`${api_url}/products?domain=originalcarranza.com&page=1`, {
       headers: {
         'App-Token': `${api_token}`
       }

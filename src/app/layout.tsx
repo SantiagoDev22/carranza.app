@@ -4,6 +4,7 @@ import "../style/globals.css";
 import Social from "../app/social";
 import Newsletter from "../app/newsletter";
 import Cart from "../app/cart";
+import { ShoppingCartProvider } from './services/shoppingCart';
 
 const inter = Montserrat({ subsets: ["latin"] });
 
@@ -15,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="es_MX">
       <body>
+        <ShoppingCartProvider>
           <header className="sticky top-0 left-0 right-0 z-40 w-full shadow-md">
                 <div className="bg-white shadow-md text-oc-green-1 md:gap-x-0 gap-x-5 transition ease-in delay-200 grid grid-cols-3 items-center justify-center px-5 lg:px-10 py-3">
                     <ul className="flex md:flex-row flex-col md:items-center gap-y-3 gap-x-4 lg:gap-x-10 justify-start">
@@ -81,7 +83,10 @@ export default function RootLayout({
                   </ul>
                 </nav>
           </header>
-          <main className={inter.className}>{children}</main>
+          
+            <main className={inter.className}>{children}</main>
+          
+
           <footer className='bg-white pt-10 sm:pt-16 pb-7 lg:px-10 px-5 relative z-20'>
               <div className='flex sm:flex-row flex-col gap-y-7 justify-center sm:justify-between sm:items-stretch items-center'>
                 <ul className='flex flex-col sm:text-left text-center gap-y-4 text-oc-green-1 md:text-base text-sm'>
@@ -132,6 +137,8 @@ export default function RootLayout({
                 </div>
               </div>
           </footer>
+
+          {/* btn float whatsapp */}
           <div className="fixed mb-10 sm:mb-0 sm:mt-52 mr-2 sm:mr-[50px] bottom-0 sm:top-0 right-0 z-40">
               <figure className="animate-pulse">
                   <a href="#" target="_blank" rel="nofollow">
@@ -144,6 +151,7 @@ export default function RootLayout({
                   </a>
               </figure>
           </div>
+        </ShoppingCartProvider>
       </body>
     </html>
   );
