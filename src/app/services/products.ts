@@ -1,10 +1,12 @@
 // "use client";
+import * as dotenv from 'dotenv' 
+dotenv.config();
 
 import axios from "axios";
 import { Productos } from "./types/Productos";
 
-const api_url = 'http://127.0.0.1:8000/api' //process.env.API_URL;
-const api_token = '3tuK0UCMWImeSoYNpD9c6dWyF5RGUDoI' // process.env.API_TOKEN;
+const api_url = process.env.NEXT_PUBLIC_API_URL;
+const api_token = process.env.NEXT_PUBLIC_API_TOKEN;
 
 // function to get all products
 export const getProducts = async (): Promise<{ data: Productos[] }> => {

@@ -62,18 +62,19 @@ export const ShoppingCartProvider: React.FC = ({ children }) => {
     }
 
     const updateCartItemQuantity = (productId: any, quantity: number) => {
-        if(quantity <= 0){
-            removeFromCart(productId);
-            updateSessionStorage();
-        }else{
-            setCartItems((prevCartItems) => 
-                prevCartItems.map((item) =>
-                    item.id === productId ? { ...item, quantity } : item,
-                    updateSessionStorage()
-                ),
-            );
-        }
-        updateSessionStorage();
+       // Limita la cantidad a un mínimo de 1 y un máximo de 20
+       const newQuantity = Math.max(1, Math.min(20, quantity));
+
+       if(newQuantity <= 0){
+           removeFromCart(productId);
+       }else{
+           setCartItems((prevCartItems) => 
+               prevCartItems.map((item) =>
+                   item.id === productId ? { ...item, quantity: newQuantity } : item // Actualiza con newQuantity
+               ),
+           );
+       }
+       updateSessionStorage(); // Llama después de actualizar el carrito
     }
 
     const clearCart = () => {

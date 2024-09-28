@@ -15,7 +15,7 @@ const ProductsList = () => {
     const handleIncreaseQuantity = (productId: string) => {
         setQuantities((prevQuantities) => ({
             ...prevQuantities,
-            [productId]: Math.min((prevQuantities[productId] || 1) +1, 10),
+            [productId]: Math.min((prevQuantities[productId] || 1) +1, 20),
         }));
     };
 
@@ -51,20 +51,27 @@ const ProductsList = () => {
     return (
         <div className="pt-20 grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-x-5 gap-y-8">
             {/* item for foreach */}
-            {products.map((product) => (
+            {products.map((product) => {
+                const imageUrl = product.gallery.length > 0 
+                ? `${process.env.NEXT_PUBLIC_STORAGE_URL}${product.gallery[0].route}${product.gallery[0].img}` 
+                : "/images/website/tienda/shampoo.png";
+            return (
             <div key={product.id} className="shadow-2xl px-2 py-4 bg-white flex flex-col gap-y-2">
                 <Link href={`/lo-mas-vendido/${product.slug}`} className="hover:brightness-90 transition flex justify-center">
                     <Image
-                        src="/images/website/tienda/shampoo.webp"
+                        src={imageUrl}
                         alt={product.title}
                         width={150}
                         height={150}
+                        unoptimized
                     />
                 </Link>
                 <div className="flex flex-col">
-                    <p className="text-oc-green-1 text-lg font-semibold">
-                        {product.title}
-                    </p>
+                    <Link href={`/lo-mas-vendido/${product.slug}`}>
+                        <p className="text-oc-green-1 text-lg font-semibold">
+                            {product.title}
+                        </p>
+                    </Link>
                     <p className="text-oc-brown-1 text-2xl font-bold ">
                         ${product.price}
                     </p>
@@ -92,10 +99,11 @@ const ProductsList = () => {
                     </button>
                 </div>
             </div>
-            ))}
+            );
+        })}
             {/* end item */}
         </div>
-    )
-}
+    );
+};
 
 export default ProductsList;
