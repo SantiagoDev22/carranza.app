@@ -33,4 +33,8 @@
   div.sidebar > div div {
     max-height: 100vh;
   }
+  nav > div{
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
 }

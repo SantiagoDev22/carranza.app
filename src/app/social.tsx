@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function Social() {   
     return (
-        <ul className="hidden sm:flex items-center gap-x-3 md:gap-x-6">
+        <ul className="flex items-center gap-x-3 md:gap-x-6">
             <li>
                 <a href="https://www.facebook.com/originalcarranza" target="_blank" rel="noopener noreferrer">
                     <Image
