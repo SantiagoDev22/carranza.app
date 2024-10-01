@@ -17,7 +17,7 @@ export default function product() {
                         <figure className="flex justify-center">
                             <Image 
                                 alt="Producto" 
-                                src="/images/website/products/producto.png" 
+                                src="/images/website/products/producto.webp" 
                                 width="400" 
                                 height="400" 
                             />
@@ -58,7 +58,7 @@ export default function product() {
                         <li>
                             <Image 
                                 alt="Producto" 
-                                src="/images/website/products/1.png" 
+                                src="/images/website/products/1.webp" 
                                 width="400" 
                                 height="400" 
                             />
@@ -66,7 +66,7 @@ export default function product() {
                         <li>
                             <Image 
                                 alt="Producto" 
-                                src="/images/website/products/2.png" 
+                                src="/images/website/products/2.webp" 
                                 width="400" 
                                 height="400" 
                             />
@@ -74,7 +74,7 @@ export default function product() {
                         <li>
                             <Image 
                                 alt="Producto" 
-                                src="/images/website/products/2.png" 
+                                src="/images/website/products/2.webp" 
                                 width="400" 
                                 height="400" 
                             />

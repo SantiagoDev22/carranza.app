@@ -37,7 +37,7 @@ export default function blog() {
                 <div className="container">
                     <article>
                         <figure className="flex justify-center">
-                            <Image alt="Blog Image" src="/images/website/blog/blog.png" width="1000" height="708" />
+                            <Image alt="Blog Image" src="/images/website/blog/blog.webp" width="1000" height="708" />
                         </figure>
                         <hgroup className="py-12">
                             <h3 className="text-4xl  sm:text-5xl uppercase font-semibold text-oc-green-1 text-center">
@@ -87,7 +87,7 @@ export default function blog() {
             {/* Figure Left */}
             <figure className="absolute -left-[4.5rem] sm:left-0 -top-12">
                 <Image
-                    src="/images/website/components/figure-l.png"
+                    src="/images/website/components/figure-l.webp"
                     alt="Figura"
                     width={100}
                     height={100}
@@ -98,7 +98,7 @@ export default function blog() {
             {/* Figure Right */}
             <figure className="absolute -right-28 sm:-right-1 -top-2">
                 <Image
-                    src="/images/website/components/figure-r.png"
+                    src="/images/website/components/figure-r.webp"
                     alt="Figura"
                     width={100}
                     height={100}

@@ -421,7 +421,7 @@ export default function faqs() {
             {/* Figure Left */}
             <figure className="absolute -left-[4.5rem] sm:left-0 -top-12">
                 <Image
-                    src="/images/website/components/figure-l.png"
+                    src="/images/website/components/figure-l.webp"
                     alt="Figura"
                     width={100}
                     height={100}
@@ -432,7 +432,7 @@ export default function faqs() {
             {/* Figure Right */}
             <figure className="absolute -right-28 sm:-right-1 -top-2">
                 <Image
-                    src="/images/website/components/figure-r.png"
+                    src="/images/website/components/figure-r.webp"
                     alt="Figura"
                     width={100}
                     height={100}

@@ -55,7 +55,7 @@ const ProductsList = () => {
             <div key={product.id} className="shadow-2xl px-2 py-4 bg-white flex flex-col gap-y-2">
                 <Link href={`/lo-mas-vendido/${product.slug}`} className="hover:brightness-90 transition flex justify-center">
                     <Image
-                        src="/images/website/tienda/shampoo.png"
+                        src="/images/website/tienda/shampoo.webp"
                         alt={product.title}
                         width={150}
                         height={150}

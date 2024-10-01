@@ -56,7 +56,7 @@ export default function work() {
                         <div className="flex flex-col-reverse gap-y-10 xl:grid grid-cols-2 items-center gap-x-24 2xl:gap-x-36">
                             <picture>
                             <Image
-                                src="/images/website/funciona/producto-1.png"
+                                src="/images/website/funciona/producto-1.webp"
                                 alt="Shampoo"
                                 width={700}
                                 height={700}
@@ -90,7 +90,7 @@ export default function work() {
                             </div>
                             <picture>
                                 <Image
-                                    src="/images/website/funciona/producto-2.png"
+                                    src="/images/website/funciona/producto-2.webp"
                                     alt="Tónico"
                                     width={700}
                                     height={700}
@@ -100,7 +100,7 @@ export default function work() {
                         <div className="flex flex-col-reverse gap-y-10 xl:grid grid-cols-2 items-center gap-x-24 2xl:gap-x-36">
                             <picture>
                             <Image
-                                src="/images/website/funciona/producto-3.png"
+                                src="/images/website/funciona/producto-3.webp"
                                 alt="Saw Palmetto"
                                 width={700}
                                 height={700}
@@ -133,7 +133,7 @@ export default function work() {
                 <div className="flex xl:flex-row gap-y-10 flex-col-reverse gap-x-12 items-center">
                     <figure>
                         <Image
-                            src="/images/website/funciona/men.png"
+                            src="/images/website/funciona/men.webp"
                             alt="Chico"
                             width={600}
                             height={600}
@@ -167,7 +167,7 @@ export default function work() {
                         </div>
                         <figure className="flex justify-center">
                             <Image
-                                src="/images/website/funciona/crecimiento.png"
+                                src="/images/website/funciona/crecimiento.webp"
                                 alt="Crecimiento"
                                 className="w-full"
                                 width={800}
@@ -195,7 +195,7 @@ export default function work() {
                     </div>
                     <figure>
                         <Image
-                            src="/images/website/funciona/woman.png"
+                            src="/images/website/funciona/woman.webp"
                             alt="Chica"
                             width={600}
                             height={600}
@@ -235,7 +235,7 @@ export default function work() {
                             <div className="flex flex-col max-w-[29rem]">
                                 <figure className="flex justify-center">
                                      <Image
-                                        src="/images/website/funciona/1.png"
+                                        src="/images/website/funciona/1.webp"
                                         alt="Bergamota"
                                         width={300}
                                         height={300}
@@ -255,7 +255,7 @@ export default function work() {
                                 <div className="flex flex-col max-w-[29rem]">
                                     <figure className="flex justify-center">
                                         <Image
-                                            src="/images/website/funciona/2.png"
+                                            src="/images/website/funciona/2.webp"
                                             alt="Corteza de Nogal"
                                             width={300}
                                             height={300}
@@ -273,7 +273,7 @@ export default function work() {
                                 <div className="flex flex-col max-w-[29rem]">
                                     <figure className="flex justify-center">
                                         <Image
-                                            src="/images/website/funciona/3.png"
+                                            src="/images/website/funciona/3.webp"
                                             alt="Cacahuananche"
                                             width={300}
                                             height={300}
@@ -291,7 +291,7 @@ export default function work() {
                                 <div className="flex flex-col max-w-[29rem]">
                                     <figure className="flex justify-center">
                                         <Image
-                                            src="/images/website/funciona/4.png"
+                                            src="/images/website/funciona/4.webp"
                                             alt="Romero"
                                             width={300}
                                             height={300}
@@ -309,7 +309,7 @@ export default function work() {
                                 <div className="flex flex-col max-w-[29rem]">
                                     <figure className="flex justify-center">
                                         <Image
-                                            src="/images/website/funciona/5.png"
+                                            src="/images/website/funciona/5.webp"
                                             alt="SÁBILA"
                                             width={300}
                                             height={300}
@@ -327,7 +327,7 @@ export default function work() {
                                 <div className="flex flex-col max-w-[29rem]">
                                     <figure className="flex justify-center">
                                         <Image
-                                            src="/images/website/funciona/6.png"
+                                            src="/images/website/funciona/6.webp"
                                             alt="Sangre de grado"
                                             width={300}
                                             height={300}
@@ -345,7 +345,7 @@ export default function work() {
                                 <div className="flex flex-col max-w-[29rem]">
                                     <figure className="flex justify-center">
                                         <Image
-                                            src="/images/website/funciona/7.png"
+                                            src="/images/website/funciona/7.webp"
                                             alt="Amole"
                                             width={300}
                                             height={300}
@@ -369,7 +369,7 @@ export default function work() {
                         <div className="flex flex-col gap-y-5">
                             <figure>
                                 <Image
-                                    src="/images/website/funciona/proceso-1.png"
+                                    src="/images/website/funciona/proceso-1.webp"
                                     alt="México"
                                     className="object-cover h-[30rem] w-full"
                                     width={300}
@@ -384,7 +384,7 @@ export default function work() {
                         <div className="flex flex-col gap-y-5">
                             <figure>
                                 <Image
-                                    src="/images/website/funciona/proceso-2.png"
+                                    src="/images/website/funciona/proceso-2.webp"
                                     alt="México"
                                     className="object-cover h-[30rem] w-full"
                                     width={300}
@@ -398,7 +398,7 @@ export default function work() {
                         <div className="flex flex-col gap-y-5">
                             <figure>
                                 <Image
-                                    src="/images/website/funciona/proceso-3.png"
+                                    src="/images/website/funciona/proceso-3.webp"
                                     alt="México"
                                     className="object-cover h-[30rem] w-full"
                                     width={300}

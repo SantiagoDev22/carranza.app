@@ -14,7 +14,7 @@ const Order = () => {
                 <figure className="flex shrink-0">
                     <Image
                         className="xl:w-14"
-                        src="/images/website/tienda/shampoo.png"
+                        src="/images/website/tienda/shampoo.webp"
                         alt="Producto"
                         width={100}
                         height={100}

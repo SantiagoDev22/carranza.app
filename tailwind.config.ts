@@ -43,11 +43,11 @@ const config: Config = {
         }
       },
       backgroundImage: {
-        "hero": "url(/images/website/home/hero.png)",
+        "hero": "url(/images/website/home/hero.webp)",
         "gradient-black": 'linear-gradient(0deg, #00000000 30.02%, #00224b00 189.95%)',
         "gradient-black-esp": 'linear-gradient(0deg, #0000006b 30.02%, #00224b00 189.95%)',
-        "hero-blog": "url(/images/website/blog/hero.png)",
-        "hero-funciona": "url(/images/website/funciona/background.png)"
+        "hero-blog": "url(/images/website/blog/hero.webp)",
+        "hero-funciona": "url(/images/website/funciona/background.webp)"
       },
     },
   },

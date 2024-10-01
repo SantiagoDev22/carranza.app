@@ -7,7 +7,7 @@ import Social from "../app/social";
 import Newsletter from "../app/newsletter";
 import Cart from "../app/cart";
 import { ShoppingCartProvider } from './services/shoppingCart';
-import { Button, Navbar } from "flowbite-react";
+import { Navbar } from "flowbite-react";
 
 const inter = Montserrat({ subsets: ["latin"] });
 
@@ -28,7 +28,7 @@ export default function RootLayout({
                           <li className='md:block hidden'>
                               <a href="#">
                                   <Image
-                                      src="/images/website/components/buscar.png"
+                                      src="/images/website/components/buscar.webp"
                                       alt="Icono Buscar"
                                       width={32}
                                       height={31}
@@ -38,7 +38,7 @@ export default function RootLayout({
                           <li className='md:block hidden'>
                               <a href="#" className="flex items-center gap-x-2">
                                   <Image
-                                      src="/images/website/components/clientes.png"
+                                      src="/images/website/components/clientes.webp"
                                       alt="Icono Cliente"
                                       width={23}
                                       height={31}
@@ -52,7 +52,7 @@ export default function RootLayout({
                     </div>
                     <Navbar.Brand href="/" className="flex justify-center">
                         <Image
-                            src="/images/website/components/logo.png"
+                            src="/images/website/components/logo.webp"
                             alt="Logo"
                             width={129}
                             height={124}
@@ -94,7 +94,7 @@ export default function RootLayout({
                             <Social />
                             <a href="#">
                                 <Image
-                                    src="/images/website/components/buscar.png"
+                                    src="/images/website/components/buscar.webp"
                                     alt="Icono Buscar"
                                     width={29}
                                     height={29}
@@ -181,7 +181,7 @@ export default function RootLayout({
               <figure className="animate-pulse">
                   <a href="#" target="_blank" rel="nofollow">
                     <Image
-                        src="/images/website/components/ws.png"
+                        src="/images/website/components/ws.webp"
                         alt="Logo WhatsApp"
                         width={100}
                         height={100}

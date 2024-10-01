@@ -37,7 +37,7 @@ export default function about() {
                     <div className="flex flex-col-reverse gap-y-5 xl:grid grid-cols-2 items-center gap-x-10">
                         <figure>
                             <Image
-                                src="/images/website/nosotros/jovenes.png"
+                                src="/images/website/nosotros/jovenes.webp"
                                 alt="Chicos felices"
                                 width={700}
                                 height={700}
@@ -303,7 +303,7 @@ export default function about() {
                         </div>
                         <figure className="xl:absolute left-0 top-0 bottom-0 flex xl:justify-normal justify-center items-center z-20">
                             <Image
-                                src="/images/website/nosotros/productos.png"
+                                src="/images/website/nosotros/productos.webp"
                                 alt="Productos"
                                 width={350}
                                 height={350}
@@ -320,7 +320,7 @@ export default function about() {
                         <div className="lg:pb-0 pb-14 flex flex-col-reverse gap-y-10 lg:grid grid-cols-2 items-center">
                             <figure className="flex justify-center relative border-r border-b-[3px] border-oc-green-1">
                                 <Image
-                                    src="/images/website/nosotros/chica.png"
+                                    src="/images/website/nosotros/chica.webp"
                                     alt="Pasos 1"
                                     width={350}
                                     height={350}
@@ -349,7 +349,7 @@ export default function about() {
                             </div>
                             <figure className="flex justify-center relative border-l border-b-[3px] border-oc-green-1">
                                 <Image
-                                    src="/images/website/nosotros/pareja.png"
+                                    src="/images/website/nosotros/pareja.webp"
                                     alt="Pasos 2"
                                     width={350}
                                     height={350}
@@ -360,7 +360,7 @@ export default function about() {
                         <div className="lg:pb-0 pb-14 flex flex-col-reverse gap-y-10 lg:grid grid-cols-2 items-center">
                             <figure className="flex justify-center relative border-r border-b-[3px] border-oc-green-1">
                                 <Image
-                                    src="/images/website/nosotros/chica-feliz.png"
+                                    src="/images/website/nosotros/chica-feliz.webp"
                                     alt="Pasos 4"
                                     width={350}
                                     height={350}
@@ -391,7 +391,7 @@ export default function about() {
                             </div>
                             <figure className="flex justify-center relative border-l border-b-[3px] border-oc-green-1">
                                 <Image
-                                    src="/images/website/nosotros/chico.png"
+                                    src="/images/website/nosotros/chico.webp"
                                     alt="Pasos 4"
                                     width={350}
                                     height={350}
@@ -421,7 +421,7 @@ export default function about() {
             {/* Figure Left */}
             <figure className="absolute -left-[4.5rem] sm:left-0 -top-12">
                 <Image
-                    src="/images/website/components/figure-l.png"
+                    src="/images/website/components/figure-l.webp"
                     alt="Figura"
                     width={100}
                     height={100}
@@ -432,7 +432,7 @@ export default function about() {
             {/* Figure Right */}
             <figure className="absolute -right-28 sm:-right-1 -top-2">
                 <Image
-                    src="/images/website/components/figure-r.png"
+                    src="/images/website/components/figure-r.webp"
                     alt="Figura"
                     width={100}
                     height={100}

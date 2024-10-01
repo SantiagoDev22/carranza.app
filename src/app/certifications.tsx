@@ -11,7 +11,7 @@ export default function Certifications() {
             <div className="flex items-center justify-around md:gap-x-0 gap-x-10">
                 <figure>
                     <Image
-                        src="/images/website/home/toxic.png"
+                        src="/images/website/home/toxic.webp"
                         alt="Toxico"
                         width={100}
                         height={100}
@@ -19,7 +19,7 @@ export default function Certifications() {
                 </figure>
                 <figure>
                     <Image
-                        src="/images/website/home/natural.png"
+                        src="/images/website/home/natural.webp"
                         alt="Natural"
                         width={100}
                         height={100}
@@ -27,7 +27,7 @@ export default function Certifications() {
                 </figure>
                 <figure>
                     <Image
-                        src="/images/website/home/garantia.png"
+                        src="/images/website/home/garantia.webp"
                         alt="Garantia"
                         width={100}
                         height={100}
@@ -35,7 +35,7 @@ export default function Certifications() {
                 </figure>
                 <figure>
                     <Image
-                        src="/images/website/home/envio.png"
+                        src="/images/website/home/envio.webp"
                         alt="Envio"
                         width={100}
                         height={100}

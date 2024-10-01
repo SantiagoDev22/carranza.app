@@ -46,7 +46,7 @@ export default function Home() {
             <div className="flex flex-col-reverse gap-y-10 xl:grid grid-cols-2 items-center gap-x-24 2xl:gap-x-36">
                 <picture>
                   <Image
-                      src="/images/website/home/1.png"
+                      src="/images/website/home/1.webp"
                       alt="Shampoo"
                       width={700}
                       height={700}
@@ -82,7 +82,7 @@ export default function Home() {
                 </div>
                 <picture>
                   <Image
-                      src="/images/website/home/2.png"
+                      src="/images/website/home/2.webp"
                       alt="Tónico"
                       width={700}
                       height={700}
@@ -92,7 +92,7 @@ export default function Home() {
             <div className="flex flex-col-reverse gap-y-10 xl:grid grid-cols-2 items-center gap-x-24 2xl:gap-x-36">
                 <picture>
                   <Image
-                      src="/images/website/home/3.png"
+                      src="/images/website/home/3.webp"
                       alt="Saw Palmetto"
                       width={700}
                       height={700}
@@ -123,7 +123,7 @@ export default function Home() {
             <div className="flex flex-col gap-y-7">
               <figure>
                 <Image
-                    src="/images/website/home/men.png"
+                    src="/images/website/home/men.webp"
                     alt="Cabello de hombre"
                     width={700}
                     height={700}
@@ -143,7 +143,7 @@ export default function Home() {
             <div className="flex flex-col gap-y-7">
               <figure>
                 <Image
-                    src="/images/website/home/woman.png"
+                    src="/images/website/home/woman.webp"
                     alt="Cabello de mujer"
                     width={700}
                     height={700}
@@ -177,7 +177,7 @@ export default function Home() {
       {/* Figure Left */}
       <figure className="absolute -left-[4.5rem] sm:left-0 -top-12">
           <Image
-              src="/images/website/components/figure-l.png"
+              src="/images/website/components/figure-l.webp"
               alt="Figura"
               width={100}
               height={100}
@@ -188,7 +188,7 @@ export default function Home() {
       {/* Figure Right */}
       <figure className="absolute -right-28 sm:-right-1 -top-2">
           <Image
-              src="/images/website/components/figure-r.png"
+              src="/images/website/components/figure-r.webp"
               alt="Figura"
               width={100}
               height={100}

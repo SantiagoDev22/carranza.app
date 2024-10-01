@@ -14,7 +14,7 @@ export default function work() {
                 <div className="flex flex-col gap-y-3">
                     <a href="/" className="flex justify-center">
                         <Image
-                            src="/images/website/components/logo.png"
+                            src="/images/website/components/logo.webp"
                             alt="Logo"
                             width={150}
                             height={150}
