@@ -7,6 +7,7 @@ interface CartItem {
     title: string;
     price: number;
     quantity: number;
+    gallery: {route:string; img:string}[];
 }
 
 interface ShoppingCartType {
@@ -27,7 +28,7 @@ export const useShoppingCart = () => {
     return context;
 };
 
-export const ShoppingCartProvider: React.FC = ({ children }) => {
+export const ShoppingCartProvider: React.FC = ( {children} ) => {
     const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
     useEffect(() => {
