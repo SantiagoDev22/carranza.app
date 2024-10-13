@@ -1,12 +1,62 @@
+'use client';
+
+import React, { useState, useEffect } from "react";
 import type { Metadata } from "next";
 import ShoppingCart from "../../shopping-cart";
 
-export const metadata: Metadata = {
-  title: "Datos de contacto l Original Carranza",
-  description: "Datos de contacto l Original Carranza",
-};
+// Definir la interfaz para los estados y municipios
+interface Municipality {
+  id: number;
+  name: string;
+}
+
+interface State {
+  id: number;
+  name: string;
+  municipalities: Municipality[];
+}
 
 export default function data() {
+  const metadata: Metadata = {
+    title: "Datos de contacto l Original Carranza",
+    description: "Datos de contacto l Original Carranza",
+  };
+
+
+  const [states, setStates] = useState<State[]>([]); // Indicar el tipo de dato de states
+  const [selectedState, setSelectedState] = useState<number | null>(null); // Tipo para selectedState
+  const [municipalities, setMunicipalities] = useState<Municipality[]>([]); // Tipo para municipalities
+  const [selectedMunicipality, setSelectedMunicipality] = useState<number | null>(null); // Tipo para selectedMunicipality
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch('/js/db/states.json');
+      const data: State[] = await response.json(); // Indicar el tipo de dato esperado
+      setStates(data);
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    if (selectedState) {
+      const selectedStateData = states.find((state) => state.id === selectedState);
+      // Usar operador de encadenamiento opcional para acceder a municipalities
+      setMunicipalities(selectedStateData?.municipalities || []); 
+    } else {
+      setMunicipalities([]);
+    }
+  }, [selectedState, states]);
+
+
+  const handleStateChange = (event: any) => {
+    setSelectedState(parseInt(event.target.value, 10));
+  };
+
+  const handleMunicipalityChange = (event: any) => {
+    setSelectedMunicipality(parseInt(event.target.value, 10));
+  }
+
   return (
     <div className="py-10 sm:py-20 xl:py-28">
       <section className="container">
@@ -43,9 +93,12 @@ export default function data() {
                       Nombre completo
                     </label>
                     <input
-                      type="text" id="customer" name="customer"
+                      type="text"
+                      id="customer"
+                      name="customer"
                       className="border border-gray-300 text-oc-green-1 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-white"
-                      placeholder="" required
+                      placeholder=""
+                      required
                     />
                   </div>
                   <div className="flex gap-x-3">
@@ -54,9 +107,15 @@ export default function data() {
                         Teléfono
                       </label>
                       <input
-                        type="tel" id="phone" name="phone"
+                        type="tel"
+                        id="phone"
+                        name="phone"
                         className="border border-gray-300 text-oc-green-1 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-white"
-                        placeholder="" required maxLength={15} minLength={10} pattern="[0-9]*"
+                        placeholder=""
+                        required
+                        maxLength={15}
+                        minLength={10}
+                        pattern="[0-9]*"
                       />
                     </div>
                     <div className="mb-5">
@@ -64,9 +123,12 @@ export default function data() {
                         Mail
                       </label>
                       <input
-                        type="email" id="name" name="email"
+                        type="email"
+                        id="name"
+                        name="email"
                         className="border border-gray-300 text-oc-green-1 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-white"
-                        placeholder="" required
+                        placeholder=""
+                        required
                       />
                     </div>
                   </div>
@@ -83,9 +145,12 @@ export default function data() {
                       Calle
                     </label>
                     <input
-                      type="text" id="street" name="street"
+                      type="text"
+                      id="street"
+                      name="street"
                       className="border border-gray-300 text-oc-green-1 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-white"
-                      placeholder="" required
+                      placeholder=""
+                      required
                     />
                   </div>
                   <div className="mb-5">
@@ -93,9 +158,12 @@ export default function data() {
                       Número
                     </label>
                     <input
-                      type="text" id="number" name="number"
+                      type="text"
+                      id="number"
+                      name="number"
                       className="border border-gray-300 text-oc-green-1 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-white"
-                      placeholder="" required
+                      placeholder=""
+                      required
                     />
                   </div>
                   <div className="mb-5">
@@ -103,9 +171,12 @@ export default function data() {
                       Código Postal
                     </label>
                     <input
-                      type="number" id="zip" name="zip"
+                      type="number"
+                      id="zip"
+                      name="zip"
                       className="border border-gray-300 text-oc-green-1 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-white"
-                      placeholder="" required
+                      placeholder=""
+                      required
                     />
                   </div>
                   <div className="mb-5">
@@ -113,29 +184,39 @@ export default function data() {
                       Colonia
                     </label>
                     <input
-                      type="text" id="col" name="col"
+                      type="text"
+                      id="col"
+                      name="col"
                       className="border border-gray-300 text-oc-green-1 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-white"
-                      placeholder="" required
+                      placeholder=""
+                      required
                     />
                   </div>
                   <div className="mb-5">
                     <select
-                      name="states" id="states"
+                      name="states"
+                      id="states"
                       className="border border-gray-300 text-oc-green-1 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-white"
+                      onChange={handleStateChange} value={selectedState || 0}
                     >
-                      <option disabled value={0} selected>
-                        Selecciona un Estado
-                      </option>
+                      <option disabled value={0}>Selecciona un Estado</option>
+                      {states.map((state) => (
+                        <option key={state.id} value={state.id} >{state.name}</option>
+                      ))}
                     </select>
                   </div>
                   <div className="mb-5">
                     <select
-                      name="municipio" id="municipio"
+                      name="municipio"
+                      id="municipio"
                       className="border border-gray-300 text-oc-green-1 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-white"
+                      value={selectedMunicipality || 0}
+                      onChange={handleMunicipalityChange}
                     >
-                      <option disabled value={0} selected>
-                        Selecciona un Municipio
-                      </option>
+                      <option disabled value={0}>Selecciona un Municipio</option>
+                      {municipalities.map((municipality) => (
+                        <option key={municipality.id} value={municipality.id} >{municipality.name}</option>
+                      ))}
                     </select>
                   </div>
                 </div>
