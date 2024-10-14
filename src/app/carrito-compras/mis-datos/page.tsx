@@ -25,26 +25,48 @@ export default function data() {
     description: "Datos de contacto l Original Carranza",
   };
 
-  // validacion de formulario
-  const [nameError, setNameError] = useState('');
-  const [phoneError, setPhoneError] = useState('');
-  const [emailError, setEmailError] = useState('');
-
   const [states, setStates] = useState<State[]>([]); // Indicar el tipo de dato de states
   const [selectedState, setSelectedState] = useState<string | null>(null); // Tipo para selectedState
   const [municipalities, setMunicipalities] = useState<Municipality[]>([]); // Tipo para municipalities
   const [selectedMunicipality, setSelectedMunicipality] = useState<string | null>(null); // Tipo para selectedMunicipality
 
+
+  // validacion de formulario
+  // Estado para el formulario y los errores
+  const [formData, setFormData] = useState({
+    customer: '',
+    phone: '',
+    email: '',
+    street: '',
+    number: '',
+    zip: '',
+    col: '',
+    state: '', 
+    municipality: ''
+  });
+
+  const [errors, setErrors] = useState({
+    customer: '',
+    phone: '',
+    email: '',
+    street: '',
+    number: '',
+    zip: '',
+    col: '',
+    state: '', 
+    municipality: '' 
+  });
+
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch('/js/db/states.json');
-      const data: State[] = await response.json(); // Indicar el tipo de dato esperado
+      const data: State[] = await response.json(); 
       setStates(data);
     };
 
     fetchData();
   }, []);
-
+  
   useEffect(() => {
     if (selectedState) {
       const selectedStateData = states.find((state) => state.name === selectedState);
@@ -55,69 +77,84 @@ export default function data() {
     }
   }, [selectedState, states]);
 
-  // validate Name
-  const handleNameChange = (event: any) => {
-    const name = event.target.value;
-    const nameRegex = /^[a-zA-Z\sáéíóúüñÁÉÍÓÚÜÑ.,'-]+$/i;
-    if(!nameRegex.test(name)){
-      setNameError('El nombre solo puede contener letras, y algunos caracteres especiales.');
-    }else{
-      setNameError('');
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+    validateField(name, value);
+  };
+
+  const validateField = (fieldName: string, value: string) => {
+    let errorMessage = '';
+
+    switch (fieldName) {
+      case 'customer':
+        const nameRegex = /^[a-zA-Z\sáéíóúüñÁÉÍÓÚÜÑ.,'-]+$/i;
+        errorMessage = !nameRegex.test(value) ? 'El nombre solo puede contener letras y algunos caracteres especiales.' : '';
+        break;
+      case 'phone':
+        const phoneRegex = /^[0-9]+$/;
+        errorMessage = !phoneRegex.test(value) ? 'El número de teléfono solo puede contener números.' : '';
+        break;
+      case 'email':
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        errorMessage = !emailRegex.test(value) ? 'Ingresa un email válido.' : '';
+        break;
+      case 'zip':
+        const zipRegex = /^[0-9]+$/;
+        errorMessage = !zipRegex.test(value) ? 'El código postal solo puede contener números.' : '';
+        break;
+      // ... Validaciones para otros campos ... 
+      default:
+        break;
     }
-  };
 
-  const handlePhoneChange = (event: any) => {
-    const phone = event.target.value;
-    const phoneRegex = /^[0-9]+$/;
-    if(!phoneRegex.test(phone)){
-      setPhoneError('El número de teléfono solo puede contener números.');
-    }else{
-      setPhoneError('');
-    }
-  };
-  
-  const handleEmailChange = (event: any) => {
-    const email = event.target.value;
-    // Validar email (formato básico)
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      setEmailError('Ingresa un email válido.');
-    } else {
-      setEmailError('');
-    }
+    setErrors({ ...errors, [fieldName]: errorMessage });
   };
 
 
-  const handleStateChange = (event: any) => {
-    setSelectedState(event.target.value);
-  };
-
-  const handleMunicipalityChange = (event: any) => {
-    setSelectedMunicipality(event.target.value);
-  }
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    // obtener data del formulario
-    const formData = {
-      customer: event.target.customer.value,
-      phone: event.target.phone.value,
-      email: event.target.email.value,
-      street: event.target.street.value,
-      number: event.target.number.value,
-      zip: event.target.zip.value,
-      col: event.target.col.value,
-      state: selectedState,
-      municipality: selectedMunicipality,
+    // Validar todos los campos antes de enviar
+    let isValid = true;
+    for (const fieldName in formData) {
+      // Asegurar que fieldName sea una llave válida 
+      if (fieldName in formData) {  
+        validateField(fieldName, formData[fieldName]);
+        if (errors[fieldName]) {
+          
+          console.log("Errores ",errors);
+
+          isValid = false;
+        }
+      }
     }
 
-    if(formData){
-      sessionStorage.setItem('customerData', JSON.stringify(formData));
+    if (isValid) {
 
+      sessionStorage.setItem('customerData', JSON.stringify(formData));
+      console.log('Formulario válido:', formData);
+
+      // Redirigir a la página de envío con router.push
       window.location.href = '/carrito-compras/envio';
+      // router.push('/carrito-compras/envio'); 
+    } else {
+      console.log('Formulario inválido');
     }
   };
+
+  const handleStateChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedState(event.target.value);
+    const { name, value} = event.target;
+    setFormData({...formData, [name]:value});
+  };
+
+  const handleMunicipalityChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedMunicipality(event.target.value);
+    const { name, value} = event.target;
+    setFormData({...formData, [name]: value});
+
+  }
 
   return (
     <div className="py-10 sm:py-20 xl:py-28">
@@ -163,10 +200,11 @@ export default function data() {
                         placeholder=""
                         maxLength={256}
                         required
-                        onChange={handleNameChange} 
+                        value={formData.customer}
+                        onChange={handleChange} 
                       />
                       {/* Mostrar mensaje de error para el nombre */}
-                      {nameError && <p className="text-red-500 text-xs">{nameError}</p>}
+                      {errors.customer && <p className="text-red-500 text-xs">{errors.customer}</p>}
                     </div>
                     <div className="flex gap-x-3 w-full">
                       <div className="mb-5">
@@ -183,10 +221,11 @@ export default function data() {
                           maxLength={10}
                           minLength={10}
                           pattern="[0-9]*"
-                          onChange={handlePhoneChange} 
+                          value={formData.phone}
+                          onChange={handleChange} 
                         />
                         {/* Mostrar mensaje de error para el teléfono */}
-                        {phoneError && <p className="text-red-500 text-xs">{phoneError}</p>}
+                        {errors.phone && <p className="text-red-500 text-xs">{errors.phone}</p>}
                       </div>
                       <div className="mb-5">
                         <label className="block mb-2 text-base font-medium text-oc-green-1">
@@ -200,10 +239,11 @@ export default function data() {
                           className="border border-gray-300 text-oc-green-1 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-white"
                           placeholder=""
                           required
-                          onChange={handleEmailChange}
+                          value={formData.email}
+                          onChange={handleChange}
                         />
                         {/* Mostrar mensaje de error para el email */}
-                        {emailError && <p className="text-red-500 text-xs">{emailError}</p>}
+                        {errors.email && <p className="text-red-500 text-xs">{errors.email}</p>}
                       </div>
                     </div>
                   </div>
@@ -225,6 +265,8 @@ export default function data() {
                         className="border border-gray-300 text-oc-green-1 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-white"
                         placeholder=""
                         required
+                        value={formData.street}
+                        onChange={handleChange}
                       />
                     </div>
                     <div className="mb-5">
@@ -238,6 +280,8 @@ export default function data() {
                         className="border border-gray-300 text-oc-green-1 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-white"
                         placeholder=""
                         required
+                        value={formData.number}
+                        onChange={handleChange}
                       />
                     </div>
                     <div className="mb-5">
@@ -253,7 +297,11 @@ export default function data() {
                         className="border border-gray-300 text-oc-green-1 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-white"
                         placeholder=""
                         required
+                        value={formData.zip}
+                        onChange={handleChange}
                       />
+                      {/* Mostrar mensaje de error para el código postal */}
+                      {errors.zip && <p className="text-red-500 text-xs">{errors.zip}</p>}
                     </div>
                     <div className="mb-5">
                       <label className="block mb-2 text-base font-medium text-oc-green-1">
@@ -266,16 +314,19 @@ export default function data() {
                         className="border border-gray-300 text-oc-green-1 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-white"
                         placeholder=""
                         required
+                        value={formData.col}
+                        onChange={handleChange}
                       />
                     </div>
                     <div className="mb-5">
                       <select
-                        name="states"
-                        id="states"
+                        name="state"
+                        id="state"
                         className="border border-gray-300 text-oc-green-1 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-white"
-                        onChange={handleStateChange} value={selectedState || 0}
+                        defaultValue={selectedState || ''}
+                        onChange={handleStateChange} 
                       >
-                        <option disabled value={0}>Selecciona un Estado</option>
+                        <option disabled value={''}>Selecciona un Estado</option>
                         {states.map((state) => (
                           <option key={state.id} value={state.name} >{state.name}</option>
                         ))}
@@ -283,13 +334,13 @@ export default function data() {
                     </div>
                     <div className="mb-5">
                       <select
-                        name="municipio"
-                        id="municipio"
+                        name="municipality"
+                        id="municipality"
                         className="border border-gray-300 text-oc-green-1 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-white"
-                        value={selectedMunicipality || 0}
+                        defaultValue={selectedMunicipality || ''}
                         onChange={handleMunicipalityChange}
                       >
-                        <option disabled value={0}>Selecciona un Municipio</option>
+                        <option disabled value={''}>Selecciona un Municipio</option>
                         {municipalities.map((municipality) => (
                           <option key={municipality.id} value={municipality.name} >{municipality.name}</option>
                         ))}
