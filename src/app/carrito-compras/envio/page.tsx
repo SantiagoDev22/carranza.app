@@ -1,13 +1,19 @@
+
 import type { Metadata } from "next";
-import Image from "next/image";
-import ShoppingCart from '../../shopping-cart';
+import ShippingForm from "@/components/shippingForm";
+import { Suspense  } from "react";
+import dynamic from "next/dynamic";
+
+const ShoppingCartList = dynamic(() => import('@/app/shopping-cart'), {
+    suspense: true
+})
 
 export const metadata: Metadata = {
   title: "Datos de envío l Original Carranza",
   description: "Datos de envío l Original Carranza",
 };
 
-export default function shipping() {   
+export default function shipping() {    
     return (
         <div className="py-10 sm:py-20 xl:py-28">
             <section className="container">
@@ -38,30 +44,12 @@ export default function shipping() {
                                 </div>
                             </div>
                             {/* Contacto */}
-                            <div className="pt-10 flex flex-col gap-y-10">
-                                <p className="text-oc-green-1 font-bold text-lg">
-                                    Envío por paquetería
-                                </p>
-                                <div className="pt-3">
-                                    <div className="flex items-center mb-5">
-                                        <input id="shipping-1" type="radio" value="" className="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" checked />
-                                        <label className="block ms-2 font-medium text-oc-green-1">
-                                            $200 por paquete
-                                        </label>
-                                    </div>
-                                </div>
-                                <div className="flex justify-start gap-x-10">
-                                    <a href="#" className="hover:text-black text-lg text-white bg-oc-brown-1 transition hover:bg-white border border-oc-brown-1 py-2 px-4">
-                                        Volver
-                                    </a>
-                                    <a href="#" className="hover:text-black text-lg text-white bg-oc-brown-1 transition hover:bg-white border border-oc-brown-1 py-2 px-4">
-                                        Pagar
-                                    </a>
-                                </div>
-                            </div>
+                            <ShippingForm/>
                         </div>
                         {/* Producto */}
-                        <ShoppingCart />
+                        <Suspense fallback={<div>Cargando Productos...</div>}>
+                            <ShoppingCartList />
+                        </Suspense>
                     </div>
                 </div>
             </section>
