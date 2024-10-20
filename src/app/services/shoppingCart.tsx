@@ -40,52 +40,57 @@ export const ShoppingCartProvider: React.FC = ( {children} ) => {
 
     // Funcion to add products
     const addToCart = (product: CartItem) => {
-        const existingItemIndex = cartItems.findIndex((item) => item.id === product.id);
+        setCartItems((prevCartItems) => {
+            const existingItemIndex = prevCartItems.findIndex((item) => item.id === product.id);
 
-        if(existingItemIndex !== -1){
-            // Si el producto ya existe, actualiza la cantidad
-            const updatedCartItems = [...cartItems];
-            updatedCartItems[existingItemIndex].quantity += product.quantity;
-            setCartItems(updatedCartItems);
-            updateSessionStorage();
-        }else{
-            // Si el producto no existe, lo agrega al carrito
-            setCartItems([...cartItems, product]);
-            updateSessionStorage();
-        }
-        updateSessionStorage();
+            if (existingItemIndex !== -1) {
+                // Si el producto ya existe, actualiza la cantidad
+                const updatedCartItems = [...prevCartItems];
+                updatedCartItems[existingItemIndex].quantity += product.quantity;
+                updateSessionStorage(updatedCartItems);
+                return updatedCartItems;
+            } else {
+                // Si el producto no existe, lo agrega al carrito
+                const newCartItems = [...prevCartItems, product];
+                updateSessionStorage(newCartItems);
+                return newCartItems;
+            }
+        });
     }
 
     // Funcion to remove products
     const removeFromCart = (productId: any) => {
-        setCartItems(cartItems.filter((item) => item.id !== productId));
-        updateSessionStorage();
-    }
+        setCartItems((prevCartItems) => {
+            const updatedCartItems = prevCartItems.filter((item) => item.id !== productId);
+            updateSessionStorage(updatedCartItems);
+            return updatedCartItems;
+        });
+    };
 
     const updateCartItemQuantity = (productId: any, quantity: number) => {
-       // Limita la cantidad a un mínimo de 1 y un máximo de 20
-       const newQuantity = Math.max(1, Math.min(20, quantity));
+        const newQuantity = Math.max(1, Math.min(20, quantity));
 
-       if(newQuantity <= 0){
-           removeFromCart(productId);
-       }else{
-           setCartItems((prevCartItems) => 
-               prevCartItems.map((item) =>
-                   item.id === productId ? { ...item, quantity: newQuantity } : item // Actualiza con newQuantity
-               ),
-           );
-       }
-       updateSessionStorage(); // Llama después de actualizar el carrito
-    }
+        if (newQuantity <= 0) {
+            removeFromCart(productId);
+        } else {
+            setCartItems((prevCartItems) => {
+                const updatedCartItems = prevCartItems.map((item) =>
+                    item.id === productId ? { ...item, quantity: newQuantity } : item
+                );
+                updateSessionStorage(updatedCartItems);
+                return updatedCartItems;
+            });
+        }
+    };
 
     const clearCart = () => {
         setCartItems([]);
-        updateSessionStorage();
+        updateSessionStorage([]);
     }
 
-    const updateSessionStorage = () => {
-        sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
-    }
+    const updateSessionStorage = (items: CartItem[]) => {
+        sessionStorage.setItem("cartItems", JSON.stringify(items));
+    };
 
     
     return (
