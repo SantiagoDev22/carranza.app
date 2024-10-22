@@ -53,9 +53,9 @@ export default function RootLayout({
                     <Navbar.Brand href="/" className="flex justify-center">
                         <Image
                             src="/images/website/components/logo.webp"
-                            alt="Logo"
-                            width={129}
-                            height={124}
+                            alt="Logo Original Carranza"
+                            width={109}
+                            height={94}
                         />                    
                     </Navbar.Brand>
                     <div className='flex gap-x-3 md:gap-x-6 justify-end'>

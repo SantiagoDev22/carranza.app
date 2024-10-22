@@ -22,3 +22,25 @@ export const getProducts = async (): Promise<{ data: Productos[] }> => {
     throw error; // Puedes manejar el error de otra manera si lo prefieres
   }
 };
+
+export const getProductBySlug = async (slug: string): Promise<Productos | null> => {
+  try {
+    const response = await axios.get(`${api_url}/products/${slug}?domain=originalcarranza.com`, {
+      headers: {
+        'App-Token': `${api_token}`
+      }
+    });
+    
+    
+    return response.data;
+  }catch (error: any){
+
+    if(error.response){
+      if(error.response.status === 404){
+        return null;
+        
+      }
+    }
+    throw error; // Puedes manejar el error de otra manera si lo prefieres
+  }
+}

@@ -1,103 +1,39 @@
 /* eslint-disable react/no-unescaped-entities */
 import type { Metadata } from "next";
 import Image from "next/image";
+import { getProductBySlug } from "@/app/services/products";
+import { notFound } from "next/navigation";
+import { Productos } from "@/app/services/types/Productos";
+import ProductShow from "@/components/showProduct";
+
+interface ProductPageProps {
+    params: {
+        slug: string;
+    };
+}
 
 export const metadata: Metadata = {
-  title: "",
-  description: "",
+  title: "Producto",
+  description: "Detalle del producto",
 };
 
+// Convertimos el componente en un Server Component
+export default async function ProductPage({ params }: ProductPageProps) {
+    const { slug } = params;
 
-export default function product() {   
+    // Hacemos el fetch del producto en el servidor
+    const product: Productos | null = await getProductBySlug(slug);
+
+    // Si no se encuentra el producto, redirigimos a una página 404
+    if (!product) {
+        notFound();
+    }
+  
     return (
         <div>
-            <section className="pt-20 xl:pt-32 pb-20">
+            <section className="pt-10 xl:pt-20 pb-20">
                 <div className="container">
-                    <div className="flex xl:flex-row flex-col gap-y-10 justify-around">
-                        <figure className="flex justify-center">
-                            <Image 
-                                alt="Producto" 
-                                src="/images/website/products/producto.webp" 
-                                width="400" 
-                                height="400" 
-                            />
-                        </figure>
-                        <div className="flex flex-col gap-y-7">
-                            <div className="flex flex-col gap-y-4">
-                                <p className="text-oc-green-1 text-3xl font-bold text-left xl:text-right">
-                                    Détox Capilar Para 3 Meses de Uso
-                                </p>
-                                <p className="text-4xl font-bold text-oc-brown-1 text-left xl:text-right">
-                                    $3,400
-                                </p>
-                            </div>
-                            <div className="flex flex-col gap-y-2">
-                                <p className="text-oc-green-1 text-left text-lg">
-                                    Cantidad:
-                                </p>       
-                                <div className="border-oc-green-1 border-2 flex py-2 justify-between w-full px-3">
-                                    <a href="#" className="rounded-full font-bold bg-oc-white-1 px-2 text-oc-green-1 flex items-center justify-center">
-                                        -
-                                    </a>
-                                    <p className="text-center text-oc-green-1 font-bold">
-                                        1
-                                    </p>
-                                    <a href="#" className="rounded-full font-bold bg-oc-white-1 px-2 text-oc-green-1 flex items-center justify-center">
-                                        +
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="flex justify-center pt-8">
-                                <a href="#" className="text-black text-2xl hover:text-white hover:bg-oc-brown-1 transition bg-white border border-oc-brown-1 py-2 px-8">
-                                    Compra
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <ul className="grid grid-cols-3 gap-x-5 pt-11">
-                        <li>
-                            <Image 
-                                alt="Producto" 
-                                src="/images/website/products/1.webp" 
-                                width="400" 
-                                height="400" 
-                            />
-                        </li>
-                        <li>
-                            <Image 
-                                alt="Producto" 
-                                src="/images/website/products/2.webp" 
-                                width="400" 
-                                height="400" 
-                            />
-                        </li>
-                        <li>
-                            <Image 
-                                alt="Producto" 
-                                src="/images/website/products/2.webp" 
-                                width="400" 
-                                height="400" 
-                            />
-                        </li>
-                    </ul>
-                    <div className="flex flex-col gap-y-6 pt-12">
-                        <div className="divide-y-2 divide-oc-green-1">
-                            <p className="text-left text-oc-green-1 text-xl font-bold pb-2">
-                                Descripción y Detalles
-                            </p>
-                            <p className="text-lg text-oc-green-1 pt-5">
-                                El Détox Capilar de Original Carranza contiene 3 Shampoos, 3 Tónicos y 3 Saw Palmettos, con el contenido necesario para 3 meses de uso. Seguimos al pie de la letra la de los 3 meses, ya que es el tiempo ideal para comenzar a ver resultados deseados y posteriormente irlos mejorando cada vez más. 
-                            </p>
-                        </div>
-                        <div className="divide-y-2 divide-oc-green-1">
-                            <p className="text-left text-oc-green-1 text-xl font-bold pb-2">
-                                Características
-                            </p>
-                            <p className="text-lg text-oc-green-1 pt-5">
-                                Cada Shampoo limpia y nutre tu folículo capilar, cada Tónico te ayudará a quitar las infecciones y promover el crecimiento de cabello donde ya no hay, o donde se está cayendo. Integrar el Saw Palmetto como suplemento alimenticio ayudará a trabajar a nivel hormonal, y logrará bloquear la DHT, causante de la caída de cabello.
-                            </p>
-                        </div>
-                    </div>
+                    <ProductShow product={product}/>
                     <ul className="grid grid-cols-2  md:gap-x-20 gap-y-14 max-w-[33rem] m-auto pt-16">
                         <li className="flex flex-col gap-y-5 max-w-[14rem]">
                             <figure className="flex justify-center">
@@ -160,4 +96,5 @@ export default function product() {
             <div className="py-1 bg-oc-green-1 relative z-20"></div>
         </div>
     );
+    
 }

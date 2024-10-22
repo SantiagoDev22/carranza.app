@@ -2,12 +2,15 @@ export interface Productos {
   id: any;
   meta_title: string;
   meta_description: string;
-  nombre: string;
+  name: string;
   slug: string;
   title: string;
-  price: number;
-  imagen: string;
+  subtitle: string;
   description: string;
+  price: number;
+  mask: string;
+  cover: string;
+  body: any;
   gallery: {id:number; route:string; img:string}[];
 }
   

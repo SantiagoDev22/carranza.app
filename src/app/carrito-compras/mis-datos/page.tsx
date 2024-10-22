@@ -132,8 +132,6 @@ export default function data() {
     if (isValid) {
       setIsLoading(true);
       sessionStorage.setItem('customerData', JSON.stringify(formData));
-      console.log('Formulario válido:', formData);
-
       // Redirigir a la página de envío con router.push
       setTimeout(() => {
         window.location.href = '/carrito-compras/envio';
