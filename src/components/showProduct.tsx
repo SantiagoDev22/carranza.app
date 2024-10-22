@@ -15,7 +15,7 @@ const ProductShow: React.FC<ProductDetailsProps> = ({product}) => {
                 <figure className="flex justify-center">
                     <Image 
                         alt={product.name} 
-                        src={product.cover || (product.gallery.length > 0 ? `${process.env.NEXT_PUBLIC_STORAGE_URL}${product.gallery[0].route}${product.gallery[0].img}` : "")}
+                        src={`${process.env.NEXT_PUBLIC_STORAGE_URL}${product.cover}` || (product.gallery.length > 0 ? `${process.env.NEXT_PUBLIC_STORAGE_URL}${product.gallery[0].route}${product.gallery[0].img}` : "")}
                         width={300} 
                         height={300}
                         unoptimized
