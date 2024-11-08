@@ -42,6 +42,8 @@ const ShippingForm = () => {
             ...cartData,
             shipping: selectedShipping,
         };
+        // Guardar el pedido en la sessionStorage
+        sessionStorage.setItem('orderData', JSON.stringify(orderData));
 
         const res = await fetch('/api/checkout', {
             method: "POST",
@@ -50,11 +52,7 @@ const ShippingForm = () => {
                 'Content-Type': 'application/json'
             }
         })
-        
         const session = await res.json();
-
-        // Guardar el pedido en la sessionStorage
-        sessionStorage.setItem('orderData', JSON.stringify(orderData));
         setTimeout(() => {
             setIsLoading(false);
             window.location = session.url
