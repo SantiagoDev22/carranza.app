@@ -17,9 +17,9 @@ const ProductShow: React.FC<ProductDetailsProps> = ({product}) => {
                         alt={product.name} 
                         src={
                             product.cover
-                             ? `${process.env.NEXT_PUBLIC_STORAGE_URL}${product.cover}`
+                             ? `${process.env.NEXT_PUBLIC_STORAGE_URL}/${product.cover}`
                              : product.gallery.length > 0
-                             ? `${process.env.NEXT_PUBLIC_STORAGE_URL}${product.gallery[0].route}${product.gallery[0].img}`
+                             ? `${process.env.NEXT_PUBLIC_STORAGE_URL}/${product.gallery[0].route}${product.gallery[0].img}`
                              : "/images/website/tienda/shampoo.png" // Ruta a tu imagen por defecto
                             }
                         width={300} 
@@ -62,7 +62,7 @@ const ProductShow: React.FC<ProductDetailsProps> = ({product}) => {
             <ul className="grid grid-cols-3 gap-x-5 pt-11">
                 {product.gallery.map((img, index) => {
                     const images = img.id
-                    ? `${process.env.NEXT_PUBLIC_STORAGE_URL}${img.route}${img.img}`
+                    ? `${process.env.NEXT_PUBLIC_STORAGE_URL}/${img.route}${img.img}`
                     : "";
                     return (
                         <li key={index}>

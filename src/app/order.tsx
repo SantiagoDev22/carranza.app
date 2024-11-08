@@ -11,7 +11,7 @@ const Order = () => {
         <div>
             {cartItems.map((item) => {
                 const imgUrl = item.gallery.length > 0 
-                ? `${process.env.NEXT_PUBLIC_STORAGE_URL}${item.gallery[0].route}${item.gallery[0].img}`
+                ? `${process.env.NEXT_PUBLIC_STORAGE_URL}/${item.gallery[0].route}${item.gallery[0].img}`
                 : "/images/website/tienda/shampoo.png";
                 return(
             <div key={item.id} className="flex gap-x-5 py-5 px-6 shadow-xl relative">

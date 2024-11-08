@@ -8,30 +8,31 @@ const stripe = new Stripe
 export async function POST(request) {
     
     const body = await request.json();
-    console.log(body);
+    // console.log(body);
     
     const orderData = JSON.parse(body.orderData);
     const customerData = JSON.parse(body.customerData);
     const cartItems = JSON.parse(body.cartItems);
     const storageUrl = process.env.NEXT_PUBLIC_STORAGE_URL;
 
-    console.log(cartItems[0].gallery.map(item => `${storageUrl}${item.route}${item.img}`));
-    
     const session = await stripe.checkout.sessions.create({
         success_url: 'http://localhost:3000/carrito-compras/gracias',
-        line_items: [
-            {
+        line_items: cartItems.map(item => {
+            // Crear las URLs de las imágenes
+            const images = item.gallery.map(image => `${storageUrl}/${image.route}/${image.img}`);
+
+            return {
                 price_data: {
                     currency: 'mxn',
                     product_data: {
-                        name: cartItems[0].name,  // Ejemplo: Desodorante Orgánico Artesanal
-                        images: cartItems[0].gallery.map(item => `${storageUrl}${item.route}${item.img}`),  // Aquí obtenemos la URL completa
+                        name: item.name,  // El nombre del producto
+                        images: images,   // Las URLs de las imágenes construidas
                     },
-                    unit_amount: parseFloat(cartItems[0].price) * 100,  // Asegúrate de convertir el precio a centavos
+                    unit_amount: parseFloat(item.price) * 100,  // Convertir el precio a centavos
                 },
-                quantity: cartItems[0].quantity, // Ejemplo: 1
-            },
-        ],
+                quantity: item.quantity, // Cantidad del producto
+            };
+        }),
         customer_email: customerData.email,
         locale: 'es',
         allow_promotion_codes: true,
@@ -71,7 +72,7 @@ export async function POST(request) {
         mode: 'payment',
     });
 
-    console.log(session);
+    // console.log(session);
     
     return NextResponse.json(session)
 

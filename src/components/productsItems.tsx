@@ -86,7 +86,7 @@ const ProductsList = () => {
       {products.map((product) => {
         const imageUrl =
           product.gallery.length > 0
-            ? `${process.env.NEXT_PUBLIC_STORAGE_URL}${product.gallery[0].route}${product.gallery[0].img}`
+            ? `${process.env.NEXT_PUBLIC_STORAGE_URL}/${product.gallery[0].route}${product.gallery[0].img}`
             : "/images/website/tienda/shampoo.png";
         return (
           <div
