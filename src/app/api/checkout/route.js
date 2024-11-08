@@ -13,10 +13,10 @@ export async function POST(request) {
     const orderData = JSON.parse(body.orderData);
     const customerData = JSON.parse(body.customerData);
     const cartItems = JSON.parse(body.cartItems);
+    const storageUrl = process.env.NEXT_PUBLIC_STORAGE_URL;
+
+    console.log(cartItems[0].gallery.map(item => `${storageUrl}${item.route}${item.img}`));
     
-
-    // const shippingPrice = parseFloat(orderData.shippingPrice);
-
     const session = await stripe.checkout.sessions.create({
         success_url: 'http://localhost:3000/carrito-compras/gracias',
         line_items: [
@@ -25,7 +25,7 @@ export async function POST(request) {
                     currency: 'mxn',
                     product_data: {
                         name: cartItems[0].name,  // Ejemplo: Desodorante Orgánico Artesanal
-                        images: [cartItems[0].gallery],
+                        images: cartItems[0].gallery.map(item => `${storageUrl}${item.route}${item.img}`),  // Aquí obtenemos la URL completa
                     },
                     unit_amount: parseFloat(cartItems[0].price) * 100,  // Asegúrate de convertir el precio a centavos
                 },
