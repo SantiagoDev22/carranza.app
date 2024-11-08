@@ -1,5 +1,6 @@
 'use client';
 
+import { log } from "console";
 import React, { useState, useEffect } from "react";
 
 interface Shipping {
@@ -42,13 +43,26 @@ const ShippingForm = () => {
             shipping: selectedShipping,
         };
 
+        const res = await fetch('/api/checkout', {
+            method: "POST",
+            body: JSON.stringify(sessionStorage),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        
+        const session = await res.json();
+
         // Guardar el pedido en la sessionStorage
         sessionStorage.setItem('orderData', JSON.stringify(orderData));
         setTimeout(() => {
             setIsLoading(false);
-            window.location.href = '/';
+            window.location = session.url
         }, 2100);
 
+
+        // const data = await res.json();
+        console.log(session);
     }
 
     return (

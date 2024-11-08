@@ -15,7 +15,13 @@ const ProductShow: React.FC<ProductDetailsProps> = ({product}) => {
                 <figure className="flex justify-center">
                     <Image 
                         alt={product.name} 
-                        src={`${process.env.NEXT_PUBLIC_STORAGE_URL}${product.cover}` || (product.gallery.length > 0 ? `${process.env.NEXT_PUBLIC_STORAGE_URL}${product.gallery[0].route}${product.gallery[0].img}` : "")}
+                        src={
+                            product.cover
+                             ? `${process.env.NEXT_PUBLIC_STORAGE_URL}${product.cover}`
+                             : product.gallery.length > 0
+                             ? `${process.env.NEXT_PUBLIC_STORAGE_URL}${product.gallery[0].route}${product.gallery[0].img}`
+                             : "/images/website/tienda/shampoo.png" // Ruta a tu imagen por defecto
+                            }
                         width={300} 
                         height={300}
                         unoptimized
