@@ -27,6 +27,8 @@ export async function POST(request) {
                     product_data: {
                         name: item.name,  // El nombre del producto
                         images: images,   // Las URLs de las imágenes construidas
+                        description: item.description,  // Descripción del producto
+                        
                     },
                     unit_amount: parseFloat(item.price) * 100,  // Convertir el precio a centavos
                 },
@@ -34,6 +36,7 @@ export async function POST(request) {
             };
         }),
         customer_email: customerData.email,
+        phone_number_collection: { enabled: true},
         locale: 'es',
         allow_promotion_codes: true,
         shipping_address_collection: {
@@ -58,17 +61,6 @@ export async function POST(request) {
                 }
             }
         ],
-        // shipping_details: {
-        //     address: {
-        //         city: customerData.municipality,
-        //         country: 'MX',
-        //         line1: customerData.street + " " + customerData.number + " " + customerData.zip,
-        //         line2: '',
-        //         postal_code: customerData.zip,
-        //         state: customerData.state,
-        //     },
-        //     name: customerData.customer
-        // },
         mode: 'payment',
     });
 
