@@ -24,7 +24,7 @@ const ShippingForm = () => {
         });
 
         setShippingError('');
-    }
+    };
     
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -34,9 +34,9 @@ const ShippingForm = () => {
             setShippingError("Debes seleccionar un método de envío");
             return;
         }
-
+    
         setIsLoading(true);
-
+    
         const cartData = JSON.parse(sessionStorage.getItem('customerData') || '{}');
         const orderData = {
             ...cartData,
@@ -44,14 +44,14 @@ const ShippingForm = () => {
         };
         // Guardar el pedido en la sessionStorage
         sessionStorage.setItem('orderData', JSON.stringify(orderData));
-
+    
         const res = await fetch('/api/checkout', {
             method: "POST",
             body: JSON.stringify(sessionStorage),
             headers: {
                 'Content-Type': 'application/json'
             }
-        })
+        });
         const session = await res.json();
         setTimeout(() => {
             setIsLoading(false);

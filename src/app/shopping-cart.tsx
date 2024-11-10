@@ -9,11 +9,12 @@ export default function ShoppingCart() {
     const subtotal = cartItems.reduce((total, item) => {
         return total + item.price * item.quantity;
     },0);
+    
     const shipping = 0;
     const total = shipping + subtotal;
 
     return (
-        <div>
+        <div className="w-[28rem]">
             <p className="text-oc-green-1 font-bold text-lg">
                 Tu orden
             </p>

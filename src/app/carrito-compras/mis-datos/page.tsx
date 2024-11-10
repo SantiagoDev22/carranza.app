@@ -206,7 +206,7 @@ export default function data() {
                       {errors.customer && <p className="text-red-500 text-xs">{errors.customer}</p>}
                     </div>
                     <div className="flex gap-x-3 w-full">
-                      <div className="mb-5">
+                      <div className="mb-5 w-full">
                         <label className="block mb-2 text-base font-medium text-oc-green-1">
                           Teléfono
                         </label>
@@ -226,7 +226,7 @@ export default function data() {
                         {/* Mostrar mensaje de error para el teléfono */}
                         {errors.phone && <p className="text-red-500 text-xs">{errors.phone}</p>}
                       </div>
-                      <div className="mb-5">
+                      <div className="mb-5 w-full">
                         <label className="block mb-2 text-base font-medium text-oc-green-1">
                           Mail
                         </label>
@@ -248,7 +248,7 @@ export default function data() {
                   </div>
                 </div>
                 {/* Envío */}
-                <div className="pt-8">
+                <div className="pt-8 hidden">
                   <p className="text-oc-green-1 font-bold text-lg">
                     Dirección de envío
                   </p>
@@ -263,7 +263,7 @@ export default function data() {
                         name="street"
                         className="border border-gray-300 text-oc-green-1 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-white"
                         placeholder=""
-                        required
+                        
                         value={formData.street}
                         onChange={handleChange}
                       />
@@ -278,7 +278,7 @@ export default function data() {
                         name="number"
                         className="border border-gray-300 text-oc-green-1 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-white"
                         placeholder=""
-                        required
+                        
                         value={formData.number}
                         onChange={handleChange}
                       />
@@ -295,7 +295,7 @@ export default function data() {
                         minLength={5}
                         className="border border-gray-300 text-oc-green-1 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-white"
                         placeholder=""
-                        required
+                        
                         value={formData.zip}
                         onChange={handleChange}
                       />
@@ -312,7 +312,7 @@ export default function data() {
                         name="col"
                         className="border border-gray-300 text-oc-green-1 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-white"
                         placeholder=""
-                        required
+                        
                         value={formData.col}
                         onChange={handleChange}
                       />
