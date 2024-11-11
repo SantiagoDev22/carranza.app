@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Ideal para hombres y mujeres, favorece el crecimiento del cabello, retrasa y frena su caída de manera natural.",
 };
 
-export default function about() {   
+export default function About() {   
     return (
         <div className="relative overflow-hidden">
             {/* Section hero */}

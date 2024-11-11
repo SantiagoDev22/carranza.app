@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Obtén información valiosa para mejorar tu salud integrando productos 100% naturales en tu día a día.",
 };
 
-export default function blog() {   
+export default function Blog() {   
     return (
         <div className="relative overflow-hidden">
             {/* Section hero */}

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description: "Datos de envío l Original Carranza",
 };
 
-export default function shipping() {    
+export default function Shipping() {    
     return (
         <div className="py-10 sm:py-20 xl:py-28">
             <section className="container">

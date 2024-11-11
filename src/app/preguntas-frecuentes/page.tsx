@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Aquí obtendrás todas las respuestas que necesitas para conocer acerca de nuestros productos para el cuidado del cabello, salud y belleza.",
 };
 
-export default function faqs() {   
+export default function Faqs() {   
     return (
         <div className="relative overflow-hidden">
             {/* Section Uno */}

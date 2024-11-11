@@ -17,7 +17,7 @@ interface State {
   municipalities: Municipality[];
 }
 
-export default function data() {
+export default function Data() {
   // const router = useRouter();
 
   const metadata: Metadata = {

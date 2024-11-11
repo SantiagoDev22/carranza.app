@@ -1,4 +1,4 @@
-export default function article() {   
+export default function Article() {   
     return (
         <main>
             <div className="container">

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: "Tratamientos ideales para casos simples y extremos en alopecia, caída de cabello, caspa y seborrea.",
 };
 
-export default function work() {   
+export default function Work() {   
     return (
         <main>
             {/* Section one */}

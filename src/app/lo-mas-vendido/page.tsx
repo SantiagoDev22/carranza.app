@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description: "Tratamiento para el cuidado de la salud capilar y en general para el cuerpo con productos 100% naturales.",
 };
 
-export default function market() {
+export default function Market() {
     return (
         <div>
             <div className="pt-20 pb-20 xl:pb-40">

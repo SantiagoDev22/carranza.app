@@ -11,11 +11,7 @@ import { Navbar } from "flowbite-react";
 
 const inter = Montserrat({ subsets: ["latin"] });
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({children,}: Readonly<{children: React.ReactNode;}>) {
   return (
     <html lang="es_MX">
       <body>
