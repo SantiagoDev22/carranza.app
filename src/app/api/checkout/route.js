@@ -1,8 +1,10 @@
-import { log } from "console";
+import * as dotenv from 'dotenv' 
+dotenv.config();
+
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
 
-const stripe = new Stripe('sk_test_51PjPBfIxTeKGtyUE4RgvXXIPkQ6MKpNtWJaZckOyzNztOEfAL8DXrr65DDM3k8h5Jp5naScsDYC6FLM3olULNA3K00PVFamQN4');
+const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY || '');
 
 export async function POST(request) {
     
