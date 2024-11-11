@@ -2,8 +2,7 @@ import { log } from "console";
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
 
-const stripe = new Stripe
-('sk_test_51PjPBfIxTeKGtyUE4RgvXXIPkQ6MKpNtWJaZckOyzNztOEfAL8DXrr65DDM3k8h5Jp5naScsDYC6FLM3olULNA3K00PVFamQN4');
+const stripe = new Stripe('sk_test_51PjPBfIxTeKGtyUE4RgvXXIPkQ6MKpNtWJaZckOyzNztOEfAL8DXrr65DDM3k8h5Jp5naScsDYC6FLM3olULNA3K00PVFamQN4');
 
 export async function POST(request) {
     
@@ -14,9 +13,10 @@ export async function POST(request) {
     const customerData = JSON.parse(body.customerData);
     const cartItems = JSON.parse(body.cartItems);
     const storageUrl = process.env.NEXT_PUBLIC_STORAGE_URL;
+    const baseUrl = process.env.NEXT_PUBLIC_URL;
 
     const session = await stripe.checkout.sessions.create({
-        success_url: 'http://localhost:3000/carrito-compras/gracias',
+        success_url: `${baseUrl}/carrito-compras/gracias`,
         line_items: cartItems.map(item => {
             // Crear las URLs de las imágenes
             const images = item.gallery.map(image => `${storageUrl}/${image.route}/${image.img}`);
